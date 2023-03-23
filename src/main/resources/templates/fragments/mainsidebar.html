@@ -1,0 +1,30 @@
+<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar" th:fragment="sidebar">
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu" data-widget="tree">
+        <!-- <li class="header"></li> -->
+        <li><a th:href="@{/}"><i class="fa fa-dashboard"></i> <span>Tableau de bord</span></a></li>
+        <li class="treeview">
+            <a href="#"><i class="fa fa-bar-chart"></i> <span>Situation financière</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a th:href="@{/comptes/historique/1}"><i class="fa fa-circle-o"></i> Historique des mouvements</a></li>
+                <li><a th:href="@{/comptes/situation}"><i class="fa fa-circle-o"></i> Situation globale</a></li>
+            </ul>
+        </li>
+        <li>
+            <a th:href="@{/comptes/pret/1}"><i class="fa fa-money"></i> <span>Demandes de prêts</span></a>
+        </li>
+
+        <li>
+            <a th:href="@{/comptes/aide/1}"><i class="fa fa-users"></i> <span>Aides financières</span></a>
+        </li>
+
+
+    </ul>
+    <!-- /.sidebar-menu -->
+</section>
+<!-- /.sidebar -->

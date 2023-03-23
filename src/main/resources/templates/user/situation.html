@@ -1,0 +1,65 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+  <title>Situation globale</title>
+</head>
+<body>
+<section layout:fragment="header">
+  <h1>Situation globale</h1>
+  <ol class="breadcrumb">
+    <li><a th:href="@{/}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Situation globale</li>
+  </ol>
+</section>
+<div layout:fragment="content">
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title">Lists</h3>
+    </div>
+    <div class="box-body no-padding">
+      <table class="table table-striped">
+        <tr>
+          <th></th>
+          <th>Janvier</th>
+          <th>Février</th>
+          <th>Mars</th>
+          <th>Avril</th>
+          <th>Mai</th>
+          <th>Juin</th>
+          <th>Juillet</th>
+          <th>Aout</th>
+          <th>Septembre</th>
+          <th>Octobre</th>
+          <th>Novembre</th>
+          <th>Décembre</th>
+          <th>Total</th>
+        </tr>
+        <tr th:each="row : ${list}">
+          <td th:text="${row.ANNEE}"></td>
+          <td th:text="${row?.R_JANV} + ${row?.S_JANV}"></td>
+          <td th:text="${row?.R_FEV} + ${row?.S_FEV}"></td>
+          <td th:text="${row?.R_MARS} +${row?.S_MARS}"></td>
+          <td th:text="${row?.R_AVRIL} + ${row?.S_AVRIL}"></td>
+          <td th:text="${row?.R_MAI} + ${row?.S_MAI}"></td>
+          <td th:text="${row?.R_JUIN} + ${row?.S_JUIN}"></td>
+          <td th:text="${row?.R_JUIL} + ${row?.S_JUIL}"></td>
+          <td th:text="${row?.R_AOUT} + ${row?.S_AOUT}"></td>
+          <td th:text="${row?.R_SEPT} + ${row?.S_SEPT}"></td>
+          <td th:text="${row?.R_OCT} + ${row?.S_OCT}"></td>
+          <td th:text="${row?.R_NOV} + ${row?.S_NOV}"></td>
+          <td th:text="${row?.R_DECE} + ${row?.S_DECE}"></td>
+          <td th:text="${row?.R_JANV} + ${row?.S_JANV} + ${row?.R_FEV} + ${row?.S_FEV} + ${row?.R_MARS} +${row?.S_MARS} + ${row?.R_AVRIL} + ${row?.S_AVRIL} + ${row?.R_MAI} + ${row?.S_MAI} + ${row?.R_JUIN} + ${row?.S_JUIN} + ${row?.R_JUIL} + ${row?.S_JUIL} + ${row?.R_AOUT} + ${row?.S_AOUT} + ${row?.R_SEPT} + ${row?.S_SEPT} + ${row?.R_OCT} + ${row?.S_OCT} + ${row?.R_NOV} + ${row?.S_NOV} + ${row?.R_DECE} + ${row?.S_DECE}"></td>
+        </tr>
+
+        <tr>
+          <th colspan="13" align="center">Total</th>
+          <th th:text="${total}"></th>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+  <title>Détail du prêt </title>
+</head>
+<body>
+<section layout:fragment="header">
+  <h1>Détail du prêt</h1>
+  <ol class="breadcrumb">
+    <li><a th:href="@{/}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Demandes de prêts</li>
+  </ol>
+</section>
+<div layout:fragment="content">
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title">Détail du prêt</h3>
+    </div>
+
+    <div class="row" style="padding: 10px">
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Numéro</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{pret.PRNUMERO}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+           <label>Type de prêts</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.TPCODE}" />
+         </div>
+
+       <div class="form-group col-lg-3 col-md-3">
+           <label>Mode</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.PRMODE}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Statut</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.PRSTATUT}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Caisse</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.CSCODE}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Code</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.TTCODE}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Date de demande</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.PRDATEDEMANDE}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Montant demandé</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.PRMONTANTDEMANDE}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Montant accordé</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.PRMONTANTACCORDE}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Taux frais de gestion</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.PRTAUXFRAISGESTION}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Frais de gestion</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.PRFRAISGESTION}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Montant débloqué</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.PRMONTANTDEBLOQUE}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Nombre d'échéance</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.PRNBREECHEANCE}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Mode de paiement</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.PRMODEPAIEMENT}" />
+         </div>
+
+         <div class="form-group col-lg-3 col-md-3">
+           <label>Mode de remboursement</label>
+           <input type="text" class="form-control" disabled="true" th:field="*{pret.PRMODEREMBOURSEMENT}" />
+         </div>
+
+    </div>
+
+    <div class="box-body no-padding" style="padding: 10px">
+
+      <h4 style="padding: 10px">Echéances de remboursements</h4>
+      <table class="table table-striped">
+        <tr>
+          <th>Numéro</th>
+          <th>Période</th>
+          <th>Montant attendu</th>
+          <th>Montant payé</th>
+          <th>Statut</th>
+          <th>Racheté</th>
+          <th>Mode de paiement</th>
+          <th></th>
+        </tr>
+        <tr th:each="row : ${remboursements}">
+          <td th:text="${row.ERNUMERO}"></td>
+          <td th:text="${row.ERMOIS}"></td>
+          <td th:text="${row.ERMONTANTATTENDU}"></td>
+          <td th:text="${row.ERMONTANTPAYE}"></td>
+          <td th:text="${row.libellStatut()}"></td>
+          <td th:text="${row.libelleRachat()}"></td>
+          <td th:text="${row.ERMODEPAIEMENT}"></td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+  <title>Mon profil mutualiste </title>
+</head>
+<body>
+<section layout:fragment="header">
+  <h1>Mon profil mutualiste</h1>
+  <ol class="breadcrumb">
+    <li><a th:href="@{/}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Mon profil mutualiste</li>
+  </ol>
+</section>
+<div layout:fragment="content">
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="box-title">Mon profil mutualiste</h3>
+    </div>
+
+    <div class="row" style="padding: 10px">
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Matricule</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MUMATRICULE}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Catégorie</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.CACODE}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Nom</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MUNOM}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Prénom</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MUPRENOM}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Date de naissance</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MUDATENAI}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Lieu de naissance</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MULIEUNAI}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Date d'embauche</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MUDATEEMBAUCHE}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Salaire net</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MUSALAIRENETN}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Salaire net1</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MUSALAIRENETN1}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Salaire net2</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MUSALAIRENETN2}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Plateforme</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MUPLATEFORME}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Statut</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MUSTATUT}" />
+      </div>
+
+      <div class="form-group col-lg-3 col-md-3">
+        <label>Adresse email</label>
+        <input type="text" class="form-control" disabled="true" th:field="*{profil.MUADDRESSEMAIL}" />
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
